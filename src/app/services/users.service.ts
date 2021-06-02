@@ -16,7 +16,7 @@ export class UsersService implements Resolve<User[]>{
     return this.httpClient.get<User[]>(this.url);
   }
 
-  getUser(id: string): Observable<User> {
+  getUser(id: string): Observable<User> {                           // TODO невикористаний код
     return this.httpClient.get<User>(this.url + '/' + id);
   }
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Post} from "../../models/Post";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -7,14 +7,11 @@ import {ActivatedRoute, Router} from "@angular/router";
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent {
   @Input()
   post: Post;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
-
-  ngOnInit(): void {
-  }
 
   goToDetails(): void {
     this.router.navigate([this.post.id], {relativeTo: this.activatedRoute, state: this.post})

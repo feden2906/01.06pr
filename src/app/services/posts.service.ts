@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Resolve} from "@angular/router";
 import {Post} from "../models/Post";
 import {HttpClient} from "@angular/common/http";
@@ -16,7 +16,7 @@ export class PostsService implements Resolve<Post[]>{
     return this.httpClient.get<Post[]>(this.url);
   }
 
-  getPost(id: string): Observable<Post> {
+  getPost(id: string): Observable<Post> {                             // TODO невикористаний код
     return this.httpClient.get<Post>(this.url + '/' + id);
   }
 }
